@@ -7,6 +7,7 @@ import Header from "./components/header/header";
 import Login from "./components/logIn/login";
 import Forget from "./components/forget/forget";
 import Reset from "./components/resetpass/reset";
+import Post from "./components/onePost";
 
 
 
@@ -20,6 +21,8 @@ function App() {
         <Route exact path="/home" element={< Home/>} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/" element={<Login />} />
+        <Route exact path="/home/post/:id" element={<Post />} />
+
       </Routes>
     </>
   );

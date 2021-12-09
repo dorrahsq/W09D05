@@ -15,15 +15,14 @@ const Login = () => {
   const getUser = async () => {
     const users = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/user/log`,
-      { input:email, password }
+      { input: email, password }
     );
     console.log(users);
     if (users.status == 206) {
-      setMessage("invalid email or password")}
-    else if(users.status == 203){
-      setMessage("Your Email has not been verified")
-      }
-     else {
+      setMessage("invalid email or password");
+    } else if (users.status == 203) {
+      setMessage("Your Email has not been verified");
+    } else {
       const data = {
         role: users.data.result.role,
         token: users.data.token,
@@ -34,20 +33,25 @@ const Login = () => {
     }
   };
 
-  const navForget  = () =>{
+  const navForget = () => {
     navigate(`/forgetPassword`);
-  }
+  };
 
-  const restPass = async()=>{
+  const restPass = async () => {
     const result = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/user/forgetPassword`,
       { email }
-    ); 
-console.log(result.data);
-  setMessage(result.data)
-
-  }
-
+    );
+    console.log(result.data);
+    setMessage(result.data);
+  };
+  const google = async () => {
+    console.log("google");
+    const result = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/google`
+    );
+    console.log(result.data);
+  };
   return (
     <>
       <div className="describeItem">
@@ -66,8 +70,8 @@ console.log(result.data);
             setPassword(e.target.value);
           }}
         />
-           <h6 onClick={navForget}> forget password? </h6>
-            {/* <h6 onClick={restPass}> forget password? </h6> */}
+        <h6 onClick={navForget}> forget password? </h6>
+        {/* <h6 onClick={restPass}> forget password? </h6> */}
         <button
           className="LogBtn"
           onClick={() => {
@@ -78,6 +82,9 @@ console.log(result.data);
         </button>
         <div className="already">
           Don't have an account? <Link to="/signup">Sign up </Link>
+        </div>
+        <div onClick={google} className="already">
+          Sign up with google
         </div>
 
         <div className="mesageL">{message} </div>
