@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+  .nav {
+    background-color: rgba(0, 0, 0, 0.705);
+
+
+  }
+  .lie {
+    display: inline-block;
+    margin: 1% 5%;
+  }
+  .lie1 {
+    font-family: "Allura", cursive;
+    list-style: none;
+  }
+  
+  #logOut {
+    display: inline-block;
+    /* margin-left: 18%; */
+  }
+  #logOut:hover {
+    cursor: pointer;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+    font-family:'Courier New', Courier, monospace
+ 
+  }
+  
+  .link:hover {
+    color: black;
+  }
+  
