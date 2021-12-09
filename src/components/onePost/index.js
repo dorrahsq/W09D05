@@ -8,6 +8,7 @@ const Post = () => {
   let navigate = useNavigate();
   const id = useParams().id;
   const [post, setPost] = useState([]);
+  const [comment, setComment] = useState([]);
 
   const state = useSelector((state) => {
     return state;
@@ -30,6 +31,22 @@ const Post = () => {
     console.log(post.data);
   };
 
+  const person = (userId) => {
+    navigate(`/profile/${userId}`);
+  };
+  const commentThis = async () => {
+    await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/comment/create`,
+      { title: comment, by: state.signIn.userID, onPost: id },
+      {
+        headers: {
+          Authorization: `Bearer ${state.signIn.token}`,
+        },
+      }
+    );
+    getPosts();
+  };
+
   return (
     <>
       {post && (
@@ -38,6 +55,12 @@ const Post = () => {
           <h4> likes: {post.length && post[1].likes} </h4>
           <h5>
             comments:
+            <input
+              onChange={(e) => {
+                setComment(e.target.value);
+              }}
+            />
+            <button onClick={commentThis}> reply </button>
             {post.length &&
               post[2].map((ele) => {
                 return (
