@@ -1,0 +1,15 @@
+.contenerImg {
+  text-align: center;
+}
+
+.borderImg {
+  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+  margin-left: 42.99%;
+}
+.othersImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}

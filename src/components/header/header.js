@@ -59,96 +59,85 @@ const Header = () => {
     <>
       <div className="nav">
         {state.signIn.token.length !== 0 ? (
-          state.signIn.role == "61a4e135a6502019b9898c1e" ? (
-            <ul>
+          <ul>
+            {state.signIn.role == "61a4e135a6502019b9898c1e" && (
               <li className="lie">
                 <Link id="first" className="link" to="/usres">
                   Users
                 </Link>
               </li>
-              <li className="lie" id="homeNav">
-                <Link className="link" to="/home">
-                  Home
-                </Link>
-              </li>
+            )}
+            <li className="lie" id="homeNav">
+              <Link className="link" to="/profile">
+                Profile
+              </Link>
+            </li>
+            <li className="lie" id="homeNav">
+              <Link className="link" to="/home">
+                Home
+              </Link>
+            </li>
 
-              <li className="lie">
-                <p className="link" onClick={logout}>
-                  {" "}
-                  <AiOutlineLogout />
-                </p>
-              </li>
-            </ul>
-          ) : (
-            <ul>
-              <li className="lie" id="homeNav">
-                <Link className="link" to="/home">
-                  home
-                </Link>
-              </li>
-
-              <li id="logOut">
-                <p className="link" onClick={logout}>
-                  <AiOutlineLogout />
-                </p>
-              </li>
-
-              <li className="lie">
-                <p className="link">
-                  <div className="newPostBtn">
-                    <p
-                      onClick={() => {
-                        handleOpen();
-                      }}
-                    >
-                      New post
-                    </p>
-                  </div>
-                  <Modal
-                    className="modal"
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
+            <li className="lie">
+              <p className="link">
+                <div className="newPostBtn">
+                  <p
+                    onClick={() => {
+                      handleOpen();
+                    }}
                   >
-                    <div className="NewPostModel">
-                      <Box sx={style} className="box">
-                        <Typography
-                          id="modal-modal-title"
-                          variant="h6"
-                          component="h2"
-                        >
-                          <span className="newPostText">
-                            What's happening?{" "}
-                          </span>
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          <input
-                            className="newPostInput"
-                            onChange={(e) => {
-                              setDescribe(e.target.value);
-                            }}
-                            type="text"
-                            placeholder="Write a caption"
-                          />
-                          <br />
+                    New post
+                  </p>
+                </div>
+                <Modal
+                  className="modal"
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <div className="NewPostModel">
+                    <Box sx={style} className="box">
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        <span className="newPostText">What's happening? </span>
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <input
+                          className="newPostInput"
+                          onChange={(e) => {
+                            setDescribe(e.target.value);
+                          }}
+                          type="text"
+                          placeholder="Write a caption"
+                        />
+                        <br />
 
-                          <button
-                            className="PostIt"
-                            onClick={() => {
-                              postIt();
-                            }}
-                          >
-                            post it
-                          </button>
-                        </Typography>
-                      </Box>
-                    </div>
-                  </Modal>
-                </p>
-              </li>
-            </ul>
-          )
+                        <button
+                          className="PostIt"
+                          onClick={() => {
+                            postIt();
+                          }}
+                        >
+                          post it
+                        </button>
+                      </Typography>
+                    </Box>
+                  </div>
+                </Modal>
+              </p>
+            </li>
+
+            <li className="lie">
+              <p className="link" onClick={logout}>
+                {" "}
+                <AiOutlineLogout />
+              </p>
+            </li>
+          </ul>
         ) : (
           console.log("ggg")
         )}

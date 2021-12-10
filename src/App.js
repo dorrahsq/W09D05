@@ -8,23 +8,23 @@ import Login from "./components/logIn/login";
 import Forget from "./components/forget/forget";
 import Reset from "./components/resetpass/reset";
 import Post from "./components/onePost";
-
-
+import Profile from "./components/profile/profile";
 
 function App() {
   return (
     <>
-    <div className="kkk">
-      <Header />
-      <Routes>
-      <Route exact path="/forgetPassword" element={< Forget/>} />
-      <Route exact path="/resetPassword" element={< Reset/>} />
-        <Route exact path="/home" element={< Home/>} />
-        <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/home/post/:id" element={<Post />} />
-
-      </Routes>
+      <div className="kkk">
+        <Header />
+        <Routes>
+          <Route exact path="/forgetPassword" element={<Forget />} />
+          <Route exact path="/resetPassword" element={<Reset />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/home/post/:id" element={<Post />} />
+          <Route exact path="/profile/post/:id" element={<Post />} />
+        </Routes>
       </div>
     </>
   );
