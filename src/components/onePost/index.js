@@ -13,6 +13,7 @@ const Post = () => {
   const [newDes, setNewDes] = useState("");
   const [postInput, setPostInput] = useState(false);
   const [comment, setComment] = useState([]);
+  const [newComment, setNewComment] = useState([]);
   const [isLiked, setIsLiked] = useState(`${(<IoHeartSharp />)}`);
 
   const state = useSelector((state) => {
@@ -124,35 +125,57 @@ const Post = () => {
     window.location.reload(false);
   };
 
+  const updateComment = async (commentid) => {
+    console.log(commentid);
+    await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/comment/update`,
+      { title: newComment, _id: commentid },
+      {
+        headers: {
+          Authorization: `Bearer ${state.signIn.token}`,
+        },
+      }
+    );
+    window.location.reload(false);
+  };
+
   return (
     <>
-      {post && (
+      {post && post.length && (
         <>
-          {!postInput && (
-            <p className="bio">
-              <h3> {post.length && post[0].describe} </h3>
-              <RiPencilFill
-                className="editBioIcno"
-                onClick={() => {
-                  updatePost();
-                }}
-              />
-            </p>
+          {post[0].postedBy != state.signIn.userID && (
+            <h3> {post.length && post[0].describe} </h3>
           )}
 
-          {postInput && (
+          {post[0].postedBy == state.signIn.userID && (
+            //   thats mean the user is the owner
             <>
-              <input
-                className="inputBio"
-                type="text"
-                placeholder={post[0].describe}
-                onChange={(e) => {
-                  setNewDes(e.target.value);
-                }}
-              />
-              <button className="bioBtn" onClick={updatePostBack}>
-                Update
-              </button>
+              {!postInput && (
+                <p className="bio">
+                  <h3> {post.length && post[0].describe} </h3>
+                  <RiPencilFill
+                    className="editBioIcno"
+                    onClick={() => {
+                      updatePost();
+                    }}
+                  />
+                </p>
+              )}
+              {postInput && (
+                <>
+                  <input
+                    className="inputBio"
+                    type="text"
+                    placeholder={post[0].describe}
+                    onChange={(e) => {
+                      setNewDes(e.target.value);
+                    }}
+                  />
+                  <button className="bioBtn" onClick={updatePostBack}>
+                    Update
+                  </button>
+                </>
+              )}
             </>
           )}
 
@@ -182,6 +205,16 @@ const Post = () => {
                         <button onClick={() => deleteComment(ele.commentId)}>
                           delete comment
                         </button>
+                      )}
+                      {state.signIn.userID == ele._id && (
+                        <>
+                          <input
+                            onChange={(e) => setNewComment(e.target.value)}
+                          />
+                          <button onClick={() => updateComment(ele.commentId)}>
+                            update comment
+                          </button>
+                        </>
                       )}
                     </div>
                   </>

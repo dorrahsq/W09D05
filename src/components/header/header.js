@@ -119,7 +119,6 @@ const Header = () => {
                           component="h2"
                         >
                           <span className="newPostText">
-                            {" "}
                             What's happening?{" "}
                           </span>
                         </Typography>
