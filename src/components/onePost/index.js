@@ -90,6 +90,9 @@ const Post = () => {
     navigate(`/home`);
   };
 
+  const deleteComment = async (commentId) => {
+    console.log(commentId);
+  };
   return (
     <>
       {post && (
@@ -110,17 +113,24 @@ const Post = () => {
             {post.length &&
               post[2].map((ele) => {
                 return (
-                  <div key={ele._id}>
-                    <h6> {ele.title} </h6>
-                    <h6> {ele.by} </h6>
-                  </div>
+                  <>
+                    <div>
+                      <h6> {ele.title} </h6>
+                      <h6> {ele.by} </h6>
+                      {/* comment owner and post owner and admin */}
+                      {(state.signIn.userID == ele._id ||
+                        state.signIn.role == "61a4e135a6502019b9898c1e" ||
+                        post[0].postedBy == state.signIn.userID) && (
+                        <button onClick={() => deleteComment(ele.commentId)}>
+                          delete comment
+                        </button>
+                      )}
+                    </div>
+                  </>
                 );
               })}
           </h5>
           <h3> </h3>
-
-          {console.log(state.signIn.userID, "token user")}
-          {post.length && console.log(post[0].postedBy, "postedby ")}
 
           {post.length &&
             (state.signIn.userID == post[0].postedBy ||
