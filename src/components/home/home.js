@@ -31,6 +31,11 @@ const Home = () => {
 
   return (
     <div className="home">
+        <img className="backg" src="https://images.pexels.com/photos/272745/pexels-photo-272745.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div className="bgg"></div>
+        <h1 className="firstHead">Welcome to the best social media platform</h1>
+        <h5 className="secHead">See what’s happening and what people are talking about right now! </h5>
+        <button> GET STARTED</button>
       <h2> Time line</h2>
       {!post.length ? (
         <h2> you dont have any tasks</h2>
@@ -38,9 +43,12 @@ const Home = () => {
         <div className="anim">
           {post.map((ele) => {
             return (
-              <div key={ele._id}>
-                <h3 onClick={() => goInside(ele._id)}> {ele.describe} </h3>
-                <h6> {ele.postedBy.username} </h6>
+              <div className="post" key={ele._id}>
+                  <div className="imgContener">
+                   <img className="imgg" src={ele.postedBy.img} /> </div>
+                       <p className="by"> {ele.postedBy.username} </p>
+                <h3 className="describe" onClick={() => goInside(ele._id)}> {ele.describe} </h3>
+           
               </div>
             );
           })}

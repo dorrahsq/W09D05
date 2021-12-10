@@ -14,6 +14,7 @@ import Post from "./components/onePost";
 function App() {
   return (
     <>
+    <div className="kkk">
       <Header />
       <Routes>
       <Route exact path="/forgetPassword" element={< Forget/>} />
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/home/post/:id" element={<Post />} />
 
       </Routes>
+      </div>
     </>
   );
 }

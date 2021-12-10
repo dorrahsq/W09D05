@@ -78,6 +78,18 @@ const Post = () => {
     getPosts();
   };
 
+  const deletePost = async (postId) => {
+    await axios.delete(
+      `${process.env.REACT_APP_BASE_URL}/posts/delete/${postId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${state.signIn.token}`,
+        },
+      }
+    );
+    navigate(`/home`);
+  };
+
   return (
     <>
       {post && (
@@ -98,14 +110,32 @@ const Post = () => {
             {post.length &&
               post[2].map((ele) => {
                 return (
-                  <>
+                  <div key={ele._id}>
                     <h6> {ele.title} </h6>
                     <h6> {ele.by} </h6>
-                  </>
+                  </div>
                 );
               })}
           </h5>
           <h3> </h3>
+
+          {console.log(state.signIn.userID, "token user")}
+          {post.length && console.log(post[0].postedBy, "postedby ")}
+
+          {post.length &&
+            (state.signIn.userID == post[0].postedBy ||
+              state.signIn.role == "61a4e135a6502019b9898c1e") && (
+              <div className="deleteBtnContener">
+                <button
+                  onClick={() => {
+                    deletePost(post[0]._id);
+                  }}
+                  className="deleteBtn"
+                >
+                  Delete this post
+                </button>
+              </div>
+            )}
         </>
       )}
     </>

@@ -52,7 +52,7 @@ const Header = () => {
             <ul>
               <li className="lie" id="homeNav">
                 <Link className="link" to="/home">
-                  Tasks
+                  home
                 </Link>
               </li>
 
