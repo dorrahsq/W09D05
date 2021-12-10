@@ -4,11 +4,14 @@ import axios from "axios";
 import "./style.css";
 import { useSelector } from "react-redux";
 import { IoHeartSharp, IoHeartOutline } from "react-icons/io5";
+import { RiPencilFill } from "react-icons/ri";
 
 const Post = () => {
   let navigate = useNavigate();
   const id = useParams().id;
   const [post, setPost] = useState([]);
+  const [newDes, setNewDes] = useState("");
+  const [postInput, setPostInput] = useState(false);
   const [comment, setComment] = useState([]);
   const [isLiked, setIsLiked] = useState(`${(<IoHeartSharp />)}`);
 
@@ -102,11 +105,57 @@ const Post = () => {
     );
     getPosts();
   };
+
+  const updatePost = () => {
+    console.log("change Bio");
+    setPostInput(true);
+  };
+
+  const updatePostBack = async () => {
+    await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/posts/update`,
+      { newdescribe: newDes, _id: id },
+      {
+        headers: {
+          Authorization: `Bearer ${state.signIn.token}`,
+        },
+      }
+    );
+    window.location.reload(false);
+  };
+
   return (
     <>
       {post && (
         <>
-          <h3> {post.length && post[0].describe} </h3>
+          {!postInput && (
+            <p className="bio">
+              <h3> {post.length && post[0].describe} </h3>
+              <RiPencilFill
+                className="editBioIcno"
+                onClick={() => {
+                  updatePost();
+                }}
+              />
+            </p>
+          )}
+
+          {postInput && (
+            <>
+              <input
+                className="inputBio"
+                type="text"
+                placeholder={post[0].describe}
+                onChange={(e) => {
+                  setNewDes(e.target.value);
+                }}
+              />
+              <button className="bioBtn" onClick={updatePostBack}>
+                Update
+              </button>
+            </>
+          )}
+
           <h4>
             <span onClick={like}> {isLiked} </span>
             {post.length && post[1].likes}

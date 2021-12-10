@@ -135,6 +135,7 @@ const Header = () => {
                           <br />
 
                           <button
+                            className="PostIt"
                             onClick={() => {
                               postIt();
                             }}

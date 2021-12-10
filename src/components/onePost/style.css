@@ -1,0 +1,43 @@
+.inputBio {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-style: none;
+  padding: 5px;
+  font-size: 21px;
+  width: 300px;
+  border-radius: 3px;
+  font-family: "Dosis", sans-serif;
+  border-bottom: 0.5px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+.bioBtn {
+  border-style: none;
+  background-color: black;
+  color: white;
+  padding: 6px 20px;
+  border-radius: 7px;
+  font-size: 20px;
+  transition: 0.5s ease;
+  font-family: "Dosis", sans-serif;
+  margin-left: 2px;
+}
+.bioBtn:hover {
+  cursor: pointer;
+}
+
+.newPostText {
+  font-family: "Dosis", sans-serif;
+  font-size: 25px;
+}
+.newPostInput {
+  display: block;
+  margin: 0px 0px 0px 50px;
+  width: 300px;
+  border-style: none;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 3px;
+  font-family: "Dosis", sans-serif;
+  border-bottom: 0.5px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
