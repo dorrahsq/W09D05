@@ -9,6 +9,7 @@ import Forget from "./components/forget/forget";
 import Reset from "./components/resetpass/reset";
 import Post from "./components/onePost";
 import Profile from "./components/profile/profile";
+import Users from "./components/users/users";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/" element={<Login />} />
           <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/users" element={<Users />} />
           <Route exact path="/home/post/:id" element={<Post />} />
           <Route exact path="/profile/post/:id" element={<Post />} />
         </Routes>

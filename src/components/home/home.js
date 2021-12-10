@@ -23,7 +23,6 @@ const Home = () => {
       },
     });
     setPosts(posts.data);
-    console.log(posts.data);
   };
   const goInside = (PostId) => {
     navigate(`post/${PostId}`);

@@ -62,7 +62,7 @@ const Header = () => {
           <ul>
             {state.signIn.role == "61a4e135a6502019b9898c1e" && (
               <li className="lie">
-                <Link id="first" className="link" to="/usres">
+                <Link id="first" className="link" to="/users">
                   Users
                 </Link>
               </li>
