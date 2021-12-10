@@ -5,6 +5,8 @@ import "./style.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { logIn } from "../../reducers/login";
 import { useDispatch } from "react-redux";
+import { GoogleLogin } from 'react-google-login';
+
 const Login = () => {
   let navigate = useNavigate();
   const dispatchEvent = useDispatch();
@@ -37,14 +39,7 @@ const Login = () => {
     navigate(`/forgetPassword`);
   };
 
-  const restPass = async () => {
-    const result = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/user/forgetPassword`,
-      { email }
-    );
-    console.log(result.data);
-    setMessage(result.data);
-  };
+
   const google = async () => {
     console.log("google");
     const result = await axios.get(
@@ -52,6 +47,27 @@ const Login = () => {
     );
     console.log(result.data);
   };
+
+  const responseSGoogle = async(responce)=>{
+    const result = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/user/googlelogin`,
+      { idToken: responce.tokenId }
+    );
+
+    const data = {
+      role: result.data.user.role,
+      token: result.data.token,
+      userID: result.data.user._id,
+    };
+    dispatchEvent(logIn(data));
+    navigate(`/home`);
+
+    console.log((result));
+  }
+  const responseFGoogle =(res)=>{
+    console.log((res));
+  }
+
   return (
     <>
       <div className="describeItem">
@@ -86,6 +102,17 @@ const Login = () => {
         <div onClick={google} className="already">
           Sign up with google
         </div>
+
+
+        <GoogleLogin
+    clientId="327598702368-71q772rq30088rg2euni7m785hcivq0n.apps.googleusercontent.com" //dotenv -----
+    buttonText="Login"
+    onSuccess={responseSGoogle}
+    onFailure={responseFGoogle}
+    cookiePolicy={'single_host_origin'}
+  />,
+
+
 
         <div className="mesageL">{message} </div>
       </div>
