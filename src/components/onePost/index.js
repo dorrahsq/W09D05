@@ -92,6 +92,15 @@ const Post = () => {
 
   const deleteComment = async (commentId) => {
     console.log(commentId);
+    await axios.delete(
+      `${process.env.REACT_APP_BASE_URL}/comment/delete/${commentId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${state.signIn.token}`,
+        },
+      }
+    );
+    getPosts();
   };
   return (
     <>
