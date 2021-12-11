@@ -18,6 +18,7 @@
   cursor: pointer;
 }
 .by {
+  font-weight: 600;
   display: inline-block;
   margin-left: 40px;
   position: absolute;
@@ -35,6 +36,7 @@
 }
 #gotothesecondpage {
   margin-bottom: 10px;
+  font-size: 50px;
 }
 .imgContener {
   text-align: left;
@@ -82,9 +84,9 @@
   background-color: rgba(64, 224, 208, 0);
   border: 1px solid rgb(255, 255, 255);
   color: white;
-  padding: 4px 15px;
+  padding: 7px 15px;
   border-radius: 20px;
-  font-size: 20px;
+  font-size: 28px;
   transition: 0.5s ease;
   margin-top: 40px;
   margin-bottom: 350px;
@@ -102,14 +104,13 @@
 
 .firstHead {
   margin-top: 200px;
-  font-size: 60px;
+  font-size: 70px;
 }
 .secHead {
-  font-size: 23px;
-
+  font-size: 28px;
   margin-top: 20px;
 }
 
 .marginB {
-  margin-bottom: 100px;
+  margin-bottom: 180px;
 }

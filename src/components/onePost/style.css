@@ -66,11 +66,13 @@
 .des {
   text-align: left;
   align-items: left;
+  margin-top: 10px;
+  font-size: 29px;
 }
 
 .editBioIcno {
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.5s ease;
 }
@@ -83,12 +85,12 @@
   display: inline-block;
 }
 #postDe2 {
-  margin: 25px 5px 5px 15px;
+  margin: 30px 5px 5px 15px;
 }
 .likes {
   position: absolute;
   right: 35px;
-  top: 10px;
+  top: 7px;
   font-size: 25px;
 }
 .likes2 {
@@ -105,6 +107,7 @@
   align-items: left;
   margin-bottom: 5px;
   margin-top: 15px;
+  font-size: 25px;
 }
 
 .commentInput {
@@ -144,11 +147,15 @@
   position: absolute;
   top: 5px;
   left: 30px;
+  font-size: 20px;
+  font-weight: 100;
 }
 
 .commentTitle {
   display: inline-block;
   margin-right: 5px;
+  font-size: 21px;
+  font-weight: 600;
 }
 
 .updateComment {
@@ -175,9 +182,10 @@
   border-style: none;
   background-color: rgba(192, 146, 102, 0.719);
   color: white;
-  padding: 4px;
+  padding: 7px;
   transition: 0.5s ease;
   border-radius: 5px;
+  font-size: 23px;
 }
 
 .deleteBtn:hover {
@@ -198,6 +206,7 @@
 .deleteComment {
   cursor: pointer;
   transition: 0.5s ease;
+  font-size: 15px;
 }
 
 .deleteComment:hover {

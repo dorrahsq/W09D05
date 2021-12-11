@@ -4,7 +4,7 @@ import axios from "axios";
 import "./style.css";
 import { useSelector } from "react-redux";
 import { IoHeartSharp, IoHeartOutline } from "react-icons/io5";
-import { RiPencilFill , RiDeleteBin6Fill } from "react-icons/ri";
+import { RiPencilFill, RiDeleteBin6Fill } from "react-icons/ri";
 
 const Post = () => {
   let navigate = useNavigate();
@@ -22,7 +22,7 @@ const Post = () => {
 
   useEffect(() => {
     getPosts();
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   const getPosts = async () => {
@@ -96,7 +96,6 @@ const Post = () => {
   };
 
   const deleteComment = async (commentId) => {
-
     await axios.delete(
       `${process.env.REACT_APP_BASE_URL}/comment/delete/${commentId}`,
       {
@@ -109,7 +108,6 @@ const Post = () => {
   };
 
   const updatePost = () => {
-
     setPostInput(true);
   };
 
@@ -145,16 +143,16 @@ const Post = () => {
       {post && post.length && (
         <>
           <div className="post2">
-            <h4 >
+            <h4>
               <span className="likes" onClick={like}>
                 {isLiked}
               </span>
               {post.length && <span className="likes2"> {post[1].likes} </span>}
             </h4>
             <div className="imgContener">
-              <img className="imgg" src={post[0].postedBy.img} alt="img"/>
+              <img className="imgg" src={post[0].postedBy.img} alt="img" />
             </div>
-            <p  onClick={() => person(post[0].postedBy._id)} className="by">
+            <p onClick={() => person(post[0].postedBy._id)} className="by">
               {" "}
               {post[0].postedBy.username}{" "}
             </p>
@@ -220,9 +218,9 @@ const Post = () => {
               post[2].map((ele) => {
                 return (
                   <div key={ele._id}>
-                    <div  className="postContent">
-                      <img className="imgg2" src={ele.img}  alt="img"/>
-                      <h6 className="commentBy"> {ele.by} </h6>
+                    <div className="postContent">
+                      <img className="imgg2" src={ele.img} alt="img" />
+                      <p className="commentBy"> {ele.by} </p>
                       <br />
                       <h6 className="commentTitle"> {ele.title} </h6>
 
@@ -230,7 +228,8 @@ const Post = () => {
                       {(state.signIn.userID === ele._id ||
                         state.signIn.role === "61a4e135a6502019b9898c1e" ||
                         post[0].postedBy._id === state.signIn.userID) && (
-                        <RiDeleteBin6Fill className="deleteComment"
+                        <RiDeleteBin6Fill
+                          className="deleteComment"
                           onClick={() => deleteComment(ele.commentId)}
                         />
                       )}
