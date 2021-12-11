@@ -21,14 +21,14 @@ const Signup = () => {
       { email, username, password, role: "61a4e07ba6502019b9898c1c" }
     );
     if (users.status == 204) {
-      console.log(users);
+
       setMessage(
         "this email or username already hava an account! log in or change your data"
       );
     } else if (users.status == 210) {
       setMessage("you need to insert a complix password");
     } else {
-      console.log(users.data);
+
       setMessage(users.data);
       // const data = {
       //   role: users.data.result.role,
@@ -53,7 +53,7 @@ const Signup = () => {
     dispatchEvent(logIn(data));
     navigate(`/home`);
 
-    console.log(result);
+
   };
   const responseFGoogle = (res) => {
     console.log(res);

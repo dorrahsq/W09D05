@@ -95,7 +95,7 @@ const Post = () => {
   };
 
   const deleteComment = async (commentId) => {
-    console.log(commentId);
+
     await axios.delete(
       `${process.env.REACT_APP_BASE_URL}/comment/delete/${commentId}`,
       {
@@ -108,7 +108,7 @@ const Post = () => {
   };
 
   const updatePost = () => {
-    console.log("change Bio");
+
     setPostInput(true);
   };
 
@@ -127,7 +127,6 @@ const Post = () => {
   };
 
   const updateComment = async (commentid) => {
-    console.log(commentid);
     await axios.put(
       `${process.env.REACT_APP_BASE_URL}/comment/update`,
       { title: newComment, _id: commentid },

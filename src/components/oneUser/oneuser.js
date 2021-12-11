@@ -27,7 +27,7 @@ const OneUser = () => {
       }
     );
     setuser(user.data);
-    console.log(user.data);
+
     const userPosts = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/posts/userPost/${id}`,
       {
@@ -37,7 +37,7 @@ const OneUser = () => {
       }
     );
     setUserPostss(userPosts.data);
-    console.log(userPosts.data);
+
   };
 
   const goInside = (id) => {

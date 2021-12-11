@@ -26,7 +26,6 @@ const Users = () => {
       }
     );
     setAllUsers(users.data);
-    console.log(users.data);
   };
 
   const deleteUser = async (userId) => {

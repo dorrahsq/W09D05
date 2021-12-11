@@ -21,7 +21,6 @@ const Forget = () => {
       setMessage(result.data);
     }
   };
-
   return (
     <div>
       <input

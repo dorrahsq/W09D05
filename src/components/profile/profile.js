@@ -25,7 +25,7 @@ const Profile = () => {
       }
     );
     setuser(user.data);
-    console.log(user.data);
+
     const userPosts = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/posts/userPost/${state.signIn.userID}`,
       {
@@ -35,7 +35,7 @@ const Profile = () => {
       }
     );
     setUserPostss(userPosts.data);
-    console.log(userPosts.data);
+
   };
 
   const goInside = (id) => {

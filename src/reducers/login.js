@@ -13,7 +13,6 @@ const signIn = (state = initialState, action) => {
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
       localStorage.setItem("userID", userID);
-      console.log(`role ${role} , token ${token} userid ${userID}`);
       return { role, token, userID };
 
     case "LOGOUT":

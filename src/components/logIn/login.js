@@ -19,7 +19,6 @@ const Login = () => {
       `${process.env.REACT_APP_BASE_URL}/user/log`,
       { input: email, password }
     );
-    console.log(users);
     if (users.status !== 200) {
       setMessage(users.data);
     } else {
@@ -51,7 +50,7 @@ const Login = () => {
     dispatchEvent(logIn(data));
     navigate(`/home`);
 
-    console.log(result);
+
   };
   const responseFGoogle = (res) => {
     console.log(res);
