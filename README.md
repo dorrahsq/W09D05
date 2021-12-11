@@ -1,4 +1,4 @@
-# Social media website (React and Express)
+# Social media website
 A social media website made In React and Node.js/Express with CRUD Functionality
 
 ## Table of Contents
@@ -40,6 +40,7 @@ As an admin,  you can:
 <a name="frontUml"></a>
 
 ## UML diagrm:
+![Untitled Diagram drawio-4](https://user-images.githubusercontent.com/92247950/145673413-e02941e9-13da-4671-ba3d-8152291ac669.png)
 
 
 <a name="frontRoutes"></a>
