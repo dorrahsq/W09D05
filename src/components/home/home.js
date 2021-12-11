@@ -27,7 +27,9 @@ const Home = () => {
   const goInside = (PostId) => {
     navigate(`post/${PostId}`);
   };
-
+  const person = (userId) => {
+    navigate(`/profile/${userId}`);
+  };
   return (
     <div className="home">
       {/* <img
@@ -46,7 +48,7 @@ const Home = () => {
 
       <h2 id="gotothesecondpage"> Time line</h2>
       {!post.length ? (
-        <h2> you dont have any tasks</h2>
+        <h2> loading ... </h2>
       ) : (
         <div className="anim">
           {post.map((ele) => {
@@ -55,7 +57,10 @@ const Home = () => {
                 <div className="imgContener">
                   <img className="imgg" src={ele.postedBy.img} />{" "}
                 </div>
-                <p className="by"> {ele.postedBy.username} </p>
+                <p onClick={() => person(ele.postedBy._id)} className="by">
+                  {" "}
+                  {ele.postedBy.username}{" "}
+                </p>
                 <h3 className="describe" onClick={() => goInside(ele._id)}>
                   {ele.describe}
                 </h3>
@@ -63,6 +68,7 @@ const Home = () => {
             );
           })}
           {text}
+          <div className="marginB"></div>
         </div>
       )}
     </div>

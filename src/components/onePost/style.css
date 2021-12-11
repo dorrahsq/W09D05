@@ -176,3 +176,7 @@
 .deleteBtn:hover {
   cursor: pointer;
 }
+
+.by:hover  {
+    cursor: pointer;
+}

@@ -12,17 +12,18 @@
 
 .describeItem input {
   display: block;
-  margin-left: 500px;
+  margin-left: 490px;
   border-style: none;
   padding: 5px;
   font-size: 30px;
   border-radius: 3px;
   font-family: "Dosis", sans-serif;
-  border-bottom: 0.5px solid rgb(0, 0, 0);
+  border-bottom: 0.5px solid rgb(255, 255, 255);
+  color: white;
   background-color: rgba(0, 0, 0, 0);
 }
 .LogBtn {
-  margin-top: 3%;
+  margin-top: 1%;
   color: rgb(255, 255, 255);
   padding: 6px 20px;
   border-radius: 7px;
@@ -41,9 +42,23 @@
 }
 
 .goIcon {
-  color: rgb(0, 0, 0);
+  color: rgba(192, 145, 102, 0.794);
+  /* background-color: rgba(192, 146, 102, 0.719); */
   font-size: 45px;
 }
 .mesageL {
   font-size: 25px;
+}
+
+.forgetPass {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.already {
+  font-size: 30px;
+}
+
+.linkk {
+  color: white;
 }

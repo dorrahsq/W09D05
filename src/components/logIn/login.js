@@ -20,10 +20,8 @@ const Login = () => {
       { input: email, password }
     );
     console.log(users);
-    if (users.status == 206) {
-      setMessage("invalid email or password");
-    } else if (users.status == 203) {
-      setMessage("Your Email has not been verified");
+    if (users.status !== 200) {
+      setMessage(users.data);
     } else {
       const data = {
         role: users.data.result.role,
@@ -37,12 +35,6 @@ const Login = () => {
 
   const navForget = () => {
     navigate(`/forgetPassword`);
-  };
-
-  const google = async () => {
-    console.log("google");
-    const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/google`);
-    console.log(result.data);
   };
 
   const responseSGoogle = async (responce) => {
@@ -83,7 +75,10 @@ const Login = () => {
             setPassword(e.target.value);
           }}
         />
-        <h6 onClick={navForget}> forget password? </h6>
+        <h6 className="forgetPass" onClick={navForget}>
+          {" "}
+          forget password?{" "}
+        </h6>
         {/* <h6 onClick={restPass}> forget password? </h6> */}
         <button
           className="LogBtn"
@@ -94,19 +89,19 @@ const Login = () => {
           <BsFillArrowRightCircleFill className="goIcon" />
         </button>
         <div className="already">
-          Don't have an account? <Link to="/signup">Sign up </Link>
-        </div>
-        <div onClick={google} className="already">
-          Sign up with google
+          Don't have an account?{" "}
+          <Link className="linkk" to="/signup">
+            Sign up{" "}
+          </Link>
         </div>
         <GoogleLogin
           clientId="327598702368-71q772rq30088rg2euni7m785hcivq0n.apps.googleusercontent.com" //dotenv -----
-          buttonText="Login"
+          buttonText="Sign in with google"
           onSuccess={responseSGoogle}
           onFailure={responseFGoogle}
           cookiePolicy={"single_host_origin"}
         />
-        ,<div className="mesageL">{message} </div>
+        <div className="mesageL">{message} </div>
       </div>
     </>
   );

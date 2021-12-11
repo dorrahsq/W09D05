@@ -30,8 +30,12 @@
   position: relative;
   background-color: rgba(0, 0, 0, 0.445);
   border-bottom: 0.2px solid rgba(153, 152, 152, 0.219);
+  margin: 0 100px;
+  border-radius: 10px;
 }
-
+#gotothesecondpage {
+  margin-bottom: 10px;
+}
 .imgContener {
   text-align: left;
   margin-left: 10px;
@@ -104,4 +108,8 @@
   font-size: 23px;
 
   margin-top: 20px;
+}
+
+.marginB {
+  margin-bottom: 100px;
 }

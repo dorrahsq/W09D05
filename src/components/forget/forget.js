@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import "./style.css";
 
 const Forget = () => {
   let navigate = useNavigate();
@@ -24,13 +25,17 @@ const Forget = () => {
   return (
     <div>
       <input
+        className="forgetInput"
         type="text"
         placeholder="email"
         onChange={(e) => {
           setEmail(e.target.value);
         }}
       />
-      <button onClick={restPass}> send email </button>
+      <button className="forgetBtn" onClick={restPass}>
+        {" "}
+        send email{" "}
+      </button>
       {message}
     </div>
   );

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
+import "./style.css";
 
 const Reset = () => {
   let navigate = useNavigate();
@@ -21,23 +22,31 @@ const Reset = () => {
   };
 
   return (
-    <div>
-      reset
+    <div className="resetContener">
+      Code
       <input
+        className="resetInput"
         type="text"
         placeholder="code"
         onChange={(e) => {
           setCode(e.target.value);
         }}
       />
+      <br />
+      New password
       <input
+        className="resetInput"
         type="password"
         placeholder="new pass"
         onChange={(e) => {
           setNewPass(e.target.value);
         }}
       />
-      <button onClick={restPass}> send email </button>
+      <br />
+      <button className="resetBtn" onClick={restPass}>
+        {" "}
+        Reset{" "}
+      </button>
       {message}
     </div>
   );

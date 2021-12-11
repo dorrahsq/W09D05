@@ -154,7 +154,7 @@ const Post = () => {
             <div className="imgContener">
               <img className="imgg" src={post[0].postedBy.img} />
             </div>
-            <p onClick={() => person(post[0].postedBy._id)} className="by">
+            <p  onClick={() => person(post[0].postedBy._id)} className="by">
               {" "}
               {post[0].postedBy.username}{" "}
             </p>
