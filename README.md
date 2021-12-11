@@ -13,8 +13,9 @@ A social media website made In React and Node.js/Express with CRUD Functionality
 
 ## User Stories
 As a user,  you can: 
-- Signup
+- Signup (with Account Verification)
 - Login
+- Forget password and reset it
 - View the time line (others posts)
 - View users profile
 - View your profile with your posts
