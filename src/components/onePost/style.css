@@ -1,25 +1,23 @@
 .inputBio {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin: 25px 0 2% 2%;
   border-style: none;
-  padding: 5px;
-  font-size: 21px;
+  padding: 2px;
   width: 300px;
   border-radius: 3px;
   font-family: "Dosis", sans-serif;
-  border-bottom: 0.5px solid rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 0.5px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
 }
 .bioBtn {
   border-style: none;
-  background-color: black;
+  background-color: rgba(192, 146, 102, 0.719);
   color: white;
-  padding: 6px 20px;
+  padding: 2px 10px;
   border-radius: 7px;
-  font-size: 20px;
   transition: 0.5s ease;
   font-family: "Dosis", sans-serif;
-  margin-left: 2px;
+  margin-left: 5px;
 }
 .bioBtn:hover {
   cursor: pointer;
@@ -38,6 +36,143 @@
   font-size: 20px;
   border-radius: 3px;
   font-family: "Dosis", sans-serif;
-  border-bottom: 0.5px solid rgb(0, 0, 0);
+  border-bottom: 0.5px solid rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0);
+}
+
+.post2 {
+  text-align: left;
+  align-items: left;
+  position: relative;
+}
+.contener {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: 240px 300px 0;
+  padding: 10px 5px 30px;
+  background-color: rgba(0, 0, 0, 0.562);
+}
+.postContent {
+  margin-top: 10px;
+  margin-left: 15px;
+  align-items: left;
+  text-align: left;
+  position: relative;
+}
+.postContent h6 {
+  align-items: left;
+  text-align: left;
+}
+.des {
+  text-align: left;
+  align-items: left;
+}
+
+.editBioIcno {
+  color: white;
+  font-size: 15px;
+}
+#postDe {
+  margin: 25px 5px 5px 15px;
+  display: inline-block;
+}
+#postDe2 {
+  margin: 25px 5px 5px 15px;
+}
+.likes {
+  position: absolute;
+  right: 35px;
+  top: 10px;
+  font-size: 25px;
+}
+.likes2 {
+  position: absolute;
+  right: 20px;
+  top: 11.5px;
+}
+
+.comment {
+  margin-left: 15px;
+  color: rgba(236, 234, 234, 0.87);
+  display: block;
+  text-align: left;
+  align-items: left;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.commentInput {
+  margin-left: 15px;
+  background-color: rgba(0, 0, 0, 0.11);
+  border-style: none;
+  padding: 2px;
+  border-radius: 3px;
+  font-family: "Dosis", sans-serif;
+  border-bottom: 0.5px solid rgb(255, 255, 255);
+  color: white;
+  text-align: left;
+  width: 200px;
+  /* background-color: rgba(0, 0, 0, 0); */
+}
+
+.commentBtn {
+  border-style: none;
+  background-color: rgba(192, 146, 102, 0.719);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 7px;
+  transition: 0.5s ease;
+  font-family: "Dosis", sans-serif;
+  margin-left: 5px;
+}
+
+.imgg2 {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+.commentBy {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 30px;
+}
+
+.commentTitle {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.updateComment {
+  margin-left: 15px;
+  background-color: rgba(0, 0, 0, 0.11);
+  border-style: none;
+  padding: 2px;
+  border-radius: 3px;
+  font-family: "Dosis", sans-serif;
+  border-bottom: 0.5px solid rgb(255, 255, 255);
+  color: white;
+  text-align: left;
+  width: 108px;
+}
+
+.deleteBtnContener {
+  position: relative;
+}
+
+.deleteBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  border-style: none;
+  background-color: rgba(192, 146, 102, 0.719);
+  color: white;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.deleteBtn:hover {
+  cursor: pointer;
 }

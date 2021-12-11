@@ -11,6 +11,9 @@
   display: inline-block;
   margin: 1% 5%;
 }
+.lie:hover {
+  cursor: pointer;
+}
 .lie1 {
   font-family: "Allura", cursive;
   list-style: none;
@@ -47,4 +50,21 @@
 .PostIt:hover {
   transform: scale(1.25) perspective(1px);
   cursor: pointer;
+}
+
+.newPostInputt {
+  display: block;
+  margin: 0px 0px 0px 50px;
+  width: 300px;
+  border-style: none;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 3px;
+  font-family: "Dosis", sans-serif;
+  border-bottom: 0.5px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.box {
+  border-radius: 10px;
 }

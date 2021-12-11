@@ -5,7 +5,7 @@ import "./style.css";
 import { useSelector } from "react-redux";
 import { IoHeartSharp, IoHeartOutline } from "react-icons/io5";
 import { RiPencilFill } from "react-icons/ri";
-
+import { RiDeleteBin6Fill } from "react-icons/ri";
 const Post = () => {
   let navigate = useNavigate();
   const id = useParams().id;
@@ -140,19 +140,39 @@ const Post = () => {
   };
 
   return (
-    <>
+    <div className="contener">
       {post && post.length && (
         <>
-          {post[0].postedBy != state.signIn.userID && (
-            <h3> {post.length && post[0].describe} </h3>
+          <div className="post2">
+            <h4>
+              <span className="likes" onClick={like}>
+                {" "}
+                {isLiked}{" "}
+              </span>
+              {post.length && <span className="likes2"> {post[1].likes} </span>}
+            </h4>
+            <div className="imgContener">
+              <img className="imgg" src={post[0].postedBy.img} />
+            </div>
+            <p className="by"> {post[0].postedBy.username} </p>
+          </div>
+
+          {post[0].postedBy._id != state.signIn.userID && (
+            <h3 id="postDe2" className="des">
+              {" "}
+              {post.length && post[0].describe}{" "}
+            </h3>
           )}
 
-          {post[0].postedBy == state.signIn.userID && (
+          {post[0].postedBy._id == state.signIn.userID && (
             //   thats mean the user is the owner
             <>
               {!postInput && (
-                <p className="bio">
-                  <h3> {post.length && post[0].describe} </h3>
+                <p className="des">
+                  <h3 id="postDe" className="des">
+                    {" "}
+                    {post.length && post[0].describe}{" "}
+                  </h3>
                   <RiPencilFill
                     className="editBioIcno"
                     onClick={() => {
@@ -162,7 +182,7 @@ const Post = () => {
                 </p>
               )}
               {postInput && (
-                <>
+                <div className="des">
                   <input
                     className="inputBio"
                     type="text"
@@ -174,46 +194,56 @@ const Post = () => {
                   <button className="bioBtn" onClick={updatePostBack}>
                     Update
                   </button>
-                </>
+                </div>
               )}
             </>
           )}
 
-          <h4>
-            <span onClick={like}> {isLiked} </span>
-            {post.length && post[1].likes}
-          </h4>
-          <h5>
-            comments:
+          <h5 className="des">
+            <span className="comment"> comments </span>
             <input
+              className="commentInput"
+              placeholder="write your comment"
               onChange={(e) => {
                 setComment(e.target.value);
               }}
+              onKeyPress={(event) => {
+                if (event.key === "Enter") {
+                  commentThis();
+                }
+              }}
             />
-            <button onClick={commentThis}> reply </button>
+            {/* <button className="commentBtn" onClick={commentThis}> reply </button> */}
             {post.length &&
               post[2].map((ele) => {
                 return (
                   <>
-                    <div>
-                      <h6> {ele.title} </h6>
-                      <h6> {ele.by} </h6>
-                      {/* comment owner and post owner and admin */}
+                    <div className="postContent">
+                      <img className="imgg2" src={ele.img} />
+                      <h6 className="commentBy"> {ele.by} </h6>
+                      <br />
+                      <h6 className="commentTitle"> {ele.title} </h6>
+
+                      {/* comment owner, post owner and admin */}
                       {(state.signIn.userID == ele._id ||
                         state.signIn.role == "61a4e135a6502019b9898c1e" ||
-                        post[0].postedBy == state.signIn.userID) && (
-                        <button onClick={() => deleteComment(ele.commentId)}>
-                          delete comment
-                        </button>
+                        post[0].postedBy._id == state.signIn.userID) && (
+                        <RiDeleteBin6Fill
+                          onClick={() => deleteComment(ele.commentId)}
+                        />
                       )}
                       {state.signIn.userID == ele._id && (
                         <>
                           <input
+                            className="updateComment"
+                            placeholder="edit comment"
                             onChange={(e) => setNewComment(e.target.value)}
+                            onKeyPress={(event) => {
+                              if (event.key === "Enter") {
+                                updateComment(ele.commentId);
+                              }
+                            }}
                           />
-                          <button onClick={() => updateComment(ele.commentId)}>
-                            update comment
-                          </button>
                         </>
                       )}
                     </div>
@@ -224,7 +254,7 @@ const Post = () => {
           <h3> </h3>
 
           {post.length &&
-            (state.signIn.userID == post[0].postedBy ||
+            (state.signIn.userID == post[0].postedBy._id ||
               state.signIn.role == "61a4e135a6502019b9898c1e") && (
               <div className="deleteBtnContener">
                 <button
@@ -233,13 +263,13 @@ const Post = () => {
                   }}
                   className="deleteBtn"
                 >
-                  Delete this post
+                  Delete post
                 </button>
               </div>
             )}
         </>
       )}
-    </>
+    </div>
   );
 };
 

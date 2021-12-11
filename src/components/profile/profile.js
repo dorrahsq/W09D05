@@ -66,7 +66,9 @@ const Profile = () => {
             {userPostss.length ? (
               <div className="allImg">
                 {userPostss.map((item) => (
-                  <h4 onClick={() => goInside(item._id)}>{item.describe} </h4>
+                  <h4 className="profileDes" onClick={() => goInside(item._id)}>
+                    {item.describe}{" "}
+                  </h4>
                 ))}
               </div>
             ) : (

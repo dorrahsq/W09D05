@@ -12,4 +12,20 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  border: 0.1px solid rgba(255, 255, 255, 0.322);
+}
+
+.profileDes {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 250px;
+}
+.profileDes:hover {
+  cursor: pointer;
+}
+.name {
+  margin-bottom: 50px;
+  margin-top: 10px;
+  font-size: 30px;
 }

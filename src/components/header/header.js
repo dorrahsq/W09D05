@@ -68,13 +68,13 @@ const Header = () => {
               </li>
             )}
             <li className="lie" id="homeNav">
-              <Link className="link" to="/profile">
-                Profile
+              <Link className="link" to="/home">
+                Home
               </Link>
             </li>
             <li className="lie" id="homeNav">
-              <Link className="link" to="/home">
-                Home
+              <Link className="link" to="/profile">
+                Profile
               </Link>
             </li>
 
@@ -107,7 +107,7 @@ const Header = () => {
                       </Typography>
                       <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         <input
-                          className="newPostInput"
+                          className="newPostInputt"
                           onChange={(e) => {
                             setDescribe(e.target.value);
                           }}

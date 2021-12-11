@@ -1,101 +1,103 @@
-
-
-.home{
-    /* text-align: left; */
-    background-color: rgba(0, 0, 255, 0.103);
-    color: white;
-    position: absolute
-    ;
-    top: 0;
-    width: 100%;
-    padding-top: 80px;
-    z-index: -1;
+.home {
+  /* text-align: left; */
+  /* background-color: rgba(0, 0, 0, 0.103); */
+  color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-top: 80px;
+  z-index: -1;
 }
 .describe {
-    text-align: left;
-    margin-left: 47px;
-    margin-bottom: 10px;
-
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
-
+.describe:hover {
+  cursor: pointer;
+}
 .by {
   display: inline-block;
-  margin-right: 5px;
+  margin-left: 40px;
+  position: absolute;
+  top: 12px;
 }
 
 .post {
   text-align: left;
-  align-items: left; 
-
+  align-items: left;
+  position: relative;
   background-color: rgba(0, 0, 0, 0.445);
-   border-bottom: 0.2px solid rgba(153, 152, 152, 0.219);;
+  border-bottom: 0.2px solid rgba(153, 152, 152, 0.219);
 }
 
-.imgContener{
-    text-align: left;
-margin-left: 10px;
-margin-top: 10px;
-display: inline-block;
+.imgContener {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: inline-block;
 }
 .imgg {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-  }
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+}
 
-  .backg{
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -4;
-    background-color: rgb(0, 0, 0);
-    opacity: 0.7;
-  }
+.backg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -4;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.7;
+}
 
-  .bgg{
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -2;
-    background-color: rgba(0, 0, 0, 0.602);
-    
-  }
+.bgg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -2;
+  background-color: rgba(0, 0, 0, 0.774);
+}
 
-  .home button {
-    border-style: none;
-    background-color: rgba(64, 224, 208, 0);
-    border: 1px solid rgb(255, 255, 255);;
-    color: white;
-    padding: 4px 15px;
-    border-radius: 20px;
-    font-size: 20px;
-    transition: 0.5s ease;
-    margin-top: 40px;
-    margin-bottom: 350px;
-  }
+.home button {
+  border-style: none;
+  background-color: rgba(64, 224, 208, 0);
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  padding: 4px 15px;
+  border-radius: 20px;
+  font-size: 20px;
+  transition: 0.5s ease;
+  margin-top: 40px;
+  margin-bottom: 350px;
+}
 
-  .home button:hover {
-    transform: scale(1.25) perspective(1px);
-    cursor: pointer;
-    background-color: rgba(128, 128, 128, 0.493);
-  }
+.home button:hover {
+  transform: scale(1.25) perspective(1px);
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.493);
+}
 
-  .firstHead{
-      margin-top: 200px;
-      font-size: 60px;
-  }
-  .secHead{
-    font-size: 23px; 
+.firstHead {
+  margin-top: 200px;
+  font-size: 60px;
+}
+.secHead {
+  font-size: 23px;
 
-    margin-top: 20px;
-  }
+  margin-top: 20px;
+}
