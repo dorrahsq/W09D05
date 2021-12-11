@@ -48,7 +48,7 @@
 .contener {
   border: 1px solid rgb(255, 255, 255);
   border-radius: 20px;
-  margin: 240px 300px 0;
+  margin: 240px 300px;
   padding: 10px 5px 30px;
   background-color: rgba(0, 0, 0, 0.562);
 }

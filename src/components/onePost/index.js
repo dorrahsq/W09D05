@@ -122,7 +122,8 @@ const Post = () => {
         },
       }
     );
-    window.location.reload(false);
+    getPosts();
+    setPostInput(false);
   };
 
   const updateComment = async (commentid) => {
@@ -136,7 +137,7 @@ const Post = () => {
         },
       }
     );
-    window.location.reload(false);
+    getPosts();
   };
 
   return (
