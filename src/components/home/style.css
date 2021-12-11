@@ -85,6 +85,10 @@
   margin-top: 40px;
   margin-bottom: 350px;
 }
+.home button a {
+  text-decoration: none;
+  color: white;
+}
 
 .home button:hover {
   transform: scale(1.25) perspective(1px);

@@ -146,15 +146,17 @@ const Post = () => {
           <div className="post2">
             <h4>
               <span className="likes" onClick={like}>
-                {" "}
-                {isLiked}{" "}
+                {isLiked}
               </span>
               {post.length && <span className="likes2"> {post[1].likes} </span>}
             </h4>
             <div className="imgContener">
               <img className="imgg" src={post[0].postedBy.img} />
             </div>
-            <p className="by"> {post[0].postedBy.username} </p>
+            <p onClick={() => person(post[0].postedBy._id)} className="by">
+              {" "}
+              {post[0].postedBy.username}{" "}
+            </p>
           </div>
 
           {post[0].postedBy._id != state.signIn.userID && (

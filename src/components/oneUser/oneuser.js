@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const Profile = () => {
+const OneUser = () => {
+  const id = useParams().id;
+
   let navigate = useNavigate();
   const state = useSelector((state) => {
     return state;
@@ -17,7 +19,7 @@ const Profile = () => {
 
   const getUser = async () => {
     const user = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/user/${state.signIn.userID}`,
+      `${process.env.REACT_APP_BASE_URL}/user/${id}`,
       {
         headers: {
           Authorization: `Bearer ${state.signIn.token}`,
@@ -27,7 +29,7 @@ const Profile = () => {
     setuser(user.data);
     console.log(user.data);
     const userPosts = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/posts/userPost/${state.signIn.userID}`,
+      `${process.env.REACT_APP_BASE_URL}/posts/userPost/${id}`,
       {
         headers: {
           Authorization: `Bearer ${state.signIn.token}`,
@@ -72,7 +74,7 @@ const Profile = () => {
                 ))}
               </div>
             ) : (
-              <p className="noPosted">You don't have any post yet ): </p>
+              <p className="noPosted">this user dosn't have any post yet ): </p>
             )}
           </>
         )}
@@ -80,4 +82,4 @@ const Profile = () => {
     </>
   );
 };
-export default Profile;
+export default OneUser;

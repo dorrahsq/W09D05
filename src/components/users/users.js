@@ -42,29 +42,43 @@ const Users = () => {
   };
 
   const goInside = (id) => {
-    navigate(`/users/${id}`);
+    navigate(`/profile/${id}`);
   };
 
   return (
-    <>
+    <div className="usersContener">
       {allUsers &&
         allUsers.map((ele) => {
           return (
             <div className="userss">
+              <div className="imgContener0">
+                <img className="img3" src={ele.img} />{" "}
+              </div>
+              {/* <div className="imgContener">
+              <img className="imgg" src={post[0].postedBy.img} />
+            </div> */}
+
               <h4
+                className="userName"
                 onClick={() => {
                   goInside(ele._id);
                 }}
               >
-                - {ele.username}
+                {ele.username}
               </h4>
-              <button onClick={() => deleteUser(ele._id)}> delete </button>
+              <button
+                className="deleteBtn2"
+                onClick={() => deleteUser(ele._id)}
+              >
+                {" "}
+                delete{" "}
+              </button>
             </div>
           );
         })}
 
       {!allUsers.length && <h2>there is no user or you are forbidden</h2>}
-    </>
+    </div>
   );
 };
 

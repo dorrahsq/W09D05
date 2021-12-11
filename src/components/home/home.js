@@ -39,8 +39,12 @@ const Home = () => {
       <h5 className="secHead">
         See what’s happening and what people are talking about right now!{" "}
       </h5>
-      <button> GET STARTED</button>
-      <h2> Time line</h2>
+      <button>
+        {" "}
+        <a href="#gotothesecondpage"> GET STARTED </a>{" "}
+      </button>
+
+      <h2 id="gotothesecondpage"> Time line</h2>
       {!post.length ? (
         <h2> you dont have any tasks</h2>
       ) : (

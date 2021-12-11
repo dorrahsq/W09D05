@@ -10,6 +10,7 @@ import Reset from "./components/resetpass/reset";
 import Post from "./components/onePost";
 import Profile from "./components/profile/profile";
 import Users from "./components/users/users";
+import OneUser from "./components/oneUser/oneuser";
 
 function App() {
   return (
@@ -26,11 +27,11 @@ function App() {
           <Route exact path="/resetPassword" element={<Reset />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/" element={<Login />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/users" element={<Users />} />
+          <Route exact path="/profile/:id" element={<OneUser />} />
           <Route exact path="/home/post/:id" element={<Post />} />
-          <Route exact path="/profile/post/:id" element={<Post />} />
+          <Route exact path="/" element={<Login />} />
         </Routes>
       </div>
     </>
