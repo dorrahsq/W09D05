@@ -14,7 +14,7 @@ const Reset = () => {
       `${process.env.REACT_APP_BASE_URL}/user/resetPassword`,
       { resetLink: code, newPassword: newPass }
     );
-    if (result.status == 200) {
+    if (result.status === 200) {
       navigate(`/`);
     } else {
       setMessage(result.data);

@@ -49,9 +49,11 @@ const Users = () => {
       {allUsers &&
         allUsers.map((ele) => {
           return (
-            <div className="userss">
+            <div key={ele._id} className="userss">
               <div className="imgContener0">
-                <img className="img3" src={ele.img} />{" "}
+                <img className="img3" src={ele.img} alt="img"  onClick={() => {
+                  goInside(ele._id);
+                }} />
               </div>
               {/* <div className="imgContener">
               <img className="imgg" src={post[0].postedBy.img} />

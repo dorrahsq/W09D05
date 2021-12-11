@@ -51,7 +51,7 @@ const OneUser = () => {
           <>
             <div className="contenerImg">
               <div className="borderImg">
-                <img className="othersImg" src={user[0].img} />
+                <img className="othersImg" src={user[0].img} alt="img"/>
               </div>
 
               <h3 className="name"> {user[0].username} </h3>
@@ -68,7 +68,7 @@ const OneUser = () => {
             {userPostss.length ? (
               <div className="allImg">
                 {userPostss.map((item) => (
-                  <h4 className="profileDes" onClick={() => goInside(item._id)}>
+                  <h4 key={item._id} className="profileDes" onClick={() => goInside(item._id)}>
                     {item.describe}{" "}
                   </h4>
                 ))}

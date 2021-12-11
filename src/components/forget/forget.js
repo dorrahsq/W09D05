@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Forget = () => {
@@ -14,7 +14,7 @@ const Forget = () => {
       `${process.env.REACT_APP_BASE_URL}/user/forgetPassword`,
       { email }
     );
-    if (result.status == 200) {
+    if (result.status === 200) {
       //pass
       navigate(`/resetPassword`);
     } else {

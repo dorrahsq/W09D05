@@ -4,8 +4,8 @@ import axios from "axios";
 import "./style.css";
 import { useSelector } from "react-redux";
 import { IoHeartSharp, IoHeartOutline } from "react-icons/io5";
-import { RiPencilFill } from "react-icons/ri";
-import { RiDeleteBin6Fill } from "react-icons/ri";
+import { RiPencilFill , RiDeleteBin6Fill } from "react-icons/ri";
+
 const Post = () => {
   let navigate = useNavigate();
   const id = useParams().id;
@@ -43,7 +43,7 @@ const Post = () => {
         },
       }
     );
-    if (result.status == 201) setIsLiked(<IoHeartSharp />);
+    if (result.status === 201) setIsLiked(<IoHeartSharp />);
     else {
       setIsLiked(<IoHeartOutline />);
     }
@@ -75,7 +75,7 @@ const Post = () => {
         },
       }
     );
-    if (result.status == 201) setIsLiked(<IoHeartSharp />);
+    if (result.status === 201) setIsLiked(<IoHeartSharp />);
     else {
       setIsLiked(<IoHeartOutline />);
     }
@@ -144,14 +144,14 @@ const Post = () => {
       {post && post.length && (
         <>
           <div className="post2">
-            <h4>
+            <h4 >
               <span className="likes" onClick={like}>
                 {isLiked}
               </span>
               {post.length && <span className="likes2"> {post[1].likes} </span>}
             </h4>
             <div className="imgContener">
-              <img className="imgg" src={post[0].postedBy.img} />
+              <img className="imgg" src={post[0].postedBy.img} alt="img"/>
             </div>
             <p  onClick={() => person(post[0].postedBy._id)} className="by">
               {" "}
@@ -159,20 +159,19 @@ const Post = () => {
             </p>
           </div>
 
-          {post[0].postedBy._id != state.signIn.userID && (
+          {post[0].postedBy._id !== state.signIn.userID && (
             <h3 id="postDe2" className="des">
               {" "}
               {post.length && post[0].describe}{" "}
             </h3>
           )}
 
-          {post[0].postedBy._id == state.signIn.userID && (
+          {post[0].postedBy._id === state.signIn.userID && (
             //   thats mean the user is the owner
             <>
               {!postInput && (
-                <p className="des">
+                <div className="des">
                   <h3 id="postDe" className="des">
-                    {" "}
                     {post.length && post[0].describe}{" "}
                   </h3>
                   <RiPencilFill
@@ -181,7 +180,7 @@ const Post = () => {
                       updatePost();
                     }}
                   />
-                </p>
+                </div>
               )}
               {postInput && (
                 <div className="des">
@@ -219,22 +218,22 @@ const Post = () => {
             {post.length &&
               post[2].map((ele) => {
                 return (
-                  <>
-                    <div className="postContent">
-                      <img className="imgg2" src={ele.img} />
+                  <div key={ele._id}>
+                    <div  className="postContent">
+                      <img className="imgg2" src={ele.img}  alt="img"/>
                       <h6 className="commentBy"> {ele.by} </h6>
                       <br />
                       <h6 className="commentTitle"> {ele.title} </h6>
 
                       {/* comment owner, post owner and admin */}
-                      {(state.signIn.userID == ele._id ||
-                        state.signIn.role == "61a4e135a6502019b9898c1e" ||
-                        post[0].postedBy._id == state.signIn.userID) && (
-                        <RiDeleteBin6Fill
+                      {(state.signIn.userID === ele._id ||
+                        state.signIn.role === "61a4e135a6502019b9898c1e" ||
+                        post[0].postedBy._id === state.signIn.userID) && (
+                        <RiDeleteBin6Fill className="deleteComment"
                           onClick={() => deleteComment(ele.commentId)}
                         />
                       )}
-                      {state.signIn.userID == ele._id && (
+                      {state.signIn.userID === ele._id && (
                         <>
                           <input
                             className="updateComment"
@@ -249,15 +248,15 @@ const Post = () => {
                         </>
                       )}
                     </div>
-                  </>
+                  </div>
                 );
               })}
           </h5>
           <h3> </h3>
 
           {post.length &&
-            (state.signIn.userID == post[0].postedBy._id ||
-              state.signIn.role == "61a4e135a6502019b9898c1e") && (
+            (state.signIn.userID === post[0].postedBy._id ||
+              state.signIn.role === "61a4e135a6502019b9898c1e") && (
               <div className="deleteBtnContener">
                 <button
                   onClick={() => {

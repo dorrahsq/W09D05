@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { AiOutlineLogout } from "react-icons/ai";
@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { styled } from "@mui/material/styles";
 import axios from "axios";
 
 const style = {
@@ -60,7 +59,7 @@ const Header = () => {
       <div className="nav">
         {state.signIn.token.length !== 0 ? (
           <ul>
-            {state.signIn.role == "61a4e135a6502019b9898c1e" && (
+            {state.signIn.role === "61a4e135a6502019b9898c1e" && (
               <li className="lie">
                 <Link id="first" className="link" to="/users">
                   Users
@@ -79,16 +78,16 @@ const Header = () => {
             </li>
 
             <li className="lie">
-              <p className="link">
-                <div className="newPostBtn">
-                  <p
+              <span className="link">
+                <span className="newPostBtn">
+                  <span
                     onClick={() => {
                       handleOpen();
                     }}
                   >
                     New post
-                  </p>
-                </div>
+                  </span>
+                </span>
                 <Modal
                   className="modal"
                   open={open}
@@ -96,7 +95,7 @@ const Header = () => {
                   aria-labelledby="modal-modal-title"
                   aria-describedby="modal-modal-description"
                 >
-                  <div className="NewPostModel">
+                  <span className="NewPostModel">
                     <Box sx={style} className="box">
                       <Typography
                         id="modal-modal-title"
@@ -126,16 +125,16 @@ const Header = () => {
                         </button>
                       </Typography>
                     </Box>
-                  </div>
+                  </span>
                 </Modal>
-              </p>
+              </span>
             </li>
 
             <li className="lie">
-              <p className="link" onClick={logout}>
+              <span className="link" onClick={logout}>
                 {" "}
                 <AiOutlineLogout />
-              </p>
+              </span>
             </li>
           </ul>
         ) : (

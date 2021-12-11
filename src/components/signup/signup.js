@@ -20,12 +20,12 @@ const Signup = () => {
       `${process.env.REACT_APP_BASE_URL}/user/create`,
       { email, username, password, role: "61a4e07ba6502019b9898c1c" }
     );
-    if (users.status == 204) {
+    if (users.status === 204) {
 
       setMessage(
         "this email or username already hava an account! log in or change your data"
       );
-    } else if (users.status == 210) {
+    } else if (users.status === 210) {
       setMessage("you need to insert a complix password");
     } else {
 

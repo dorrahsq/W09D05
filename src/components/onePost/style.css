@@ -71,6 +71,12 @@
 .editBioIcno {
   color: white;
   font-size: 15px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.editBioIcno:hover {
+  transform: scale(1.25) perspective(1px);
 }
 #postDe {
   margin: 25px 5px 5px 15px;
@@ -170,13 +176,30 @@
   background-color: rgba(192, 146, 102, 0.719);
   color: white;
   padding: 4px;
+  transition: 0.5s ease;
   border-radius: 5px;
 }
 
 .deleteBtn:hover {
   cursor: pointer;
+  transform: scale(1.25) perspective(1px);
 }
 
-.by:hover  {
-    cursor: pointer;
+.by:hover {
+  cursor: pointer;
+}
+.likes {
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.likes:hover {
+  transform: scale(1.25) perspective(1px);
+}
+.deleteComment {
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.deleteComment:hover {
+  transform: scale(1.25) perspective(1px);
 }

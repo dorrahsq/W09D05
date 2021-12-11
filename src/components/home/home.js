@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   let navigate = useNavigate();
-  const [text, setText] = useState("");
   const [post, setPosts] = useState("");
   const state = useSelector((state) => {
     return state;
@@ -55,7 +54,7 @@ const Home = () => {
             return (
               <div className="post" key={ele._id}>
                 <div className="imgContener">
-                  <img className="imgg" src={ele.postedBy.img} />{" "}
+                  <img className="imgg" src={ele.postedBy.img} alt="img" />{" "}
                 </div>
                 <p onClick={() => person(ele.postedBy._id)} className="by">
                   {" "}
@@ -67,7 +66,6 @@ const Home = () => {
               </div>
             );
           })}
-          {text}
           <div className="marginB"></div>
         </div>
       )}

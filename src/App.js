@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div className="kkk">
-        <img
+        <img alt="img"
           className="backg"
           src="https://images.pexels.com/photos/272745/pexels-photo-272745.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         />
