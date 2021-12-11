@@ -13,6 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     getAllPosts();
+    // eslint-disable-next-line
   }, []);
 
   const getAllPosts = async () => {

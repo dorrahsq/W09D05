@@ -22,6 +22,7 @@ const Post = () => {
 
   useEffect(() => {
     getPosts();
+      // eslint-disable-next-line
   }, []);
 
   const getPosts = async () => {

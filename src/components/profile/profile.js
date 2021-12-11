@@ -13,6 +13,7 @@ const Profile = () => {
   const [userPostss, setUserPostss] = useState([]);
   useEffect(() => {
     getUser();
+      // eslint-disable-next-line
   }, []);
 
   const getUser = async () => {
