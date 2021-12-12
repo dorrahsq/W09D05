@@ -215,9 +215,9 @@ const Post = () => {
             />
             {/* <button className="commentBtn" onClick={commentThis}> reply </button> */}
             {post.length &&
-              post[2].map((ele) => {
+              post[2].map((ele , i) => {
                 return (
-                  <div key={ele._id}>
+                  <div key={i}>
                     <div className="postContent">
                       <img className="imgg2" src={ele.img} alt="img" />
                       <p className="commentBy"> {ele.by} </p>
