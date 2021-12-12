@@ -77,58 +77,6 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="lie">
-              <span className="link">
-                <span className="newPostBtn">
-                  <span
-                    onClick={() => {
-                      handleOpen();
-                    }}
-                  >
-                    New post
-                  </span>
-                </span>
-                <Modal
-                  className="modal"
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                >
-                  <span className="NewPostModel">
-                    <Box sx={style} className="box">
-                      <Typography
-                        id="modal-modal-title"
-                        variant="h6"
-                        component="h2"
-                      >
-                        <span className="newPostText">What's happening? </span>
-                      </Typography>
-                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <input
-                          className="newPostInputt"
-                          onChange={(e) => {
-                            setDescribe(e.target.value);
-                          }}
-                          type="text"
-                          placeholder="Write a caption"
-                        />
-                        <br />
-
-                        <button
-                          className="PostIt"
-                          onClick={() => {
-                            postIt();
-                          }}
-                        >
-                          post it
-                        </button>
-                      </Typography>
-                    </Box>
-                  </span>
-                </Modal>
-              </span>
-            </li>
 
             <li className="lie">
               <span className="link" onClick={logout}>
