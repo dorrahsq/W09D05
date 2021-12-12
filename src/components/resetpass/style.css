@@ -1,8 +1,4 @@
-.resetContener {
-  margin: 300px 480px 0px 0px;
-  text-align: right;
-  font-size: 30px;
-}
+
 .resetInput {
   border-style: none;
   padding: 5px;
@@ -14,11 +10,16 @@
   border-bottom: 0.5px solid rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.397);
+  width: 30%;
+
 }
 
+
+.prr{
+  margin-top: 200px;
+}
 .resetBtn {
   margin-top: 30px;
-  margin-right: 150px;
   border-style: none;
   background-color: rgba(192, 146, 102, 0.719);
   color: white;
@@ -26,4 +27,11 @@
   font-size: 23px;
   border-radius: 5px;
   margin-bottom: 10px;
+  transition: 0.5s ease;
+
+}
+
+.resetBtn:hover{
+  transform: scale(1.25) perspective(1px);
+
 }

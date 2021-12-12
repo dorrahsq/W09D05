@@ -11,8 +11,8 @@
 }
 
 .describeItem input {
-  display: block;
-  margin-left: 40.1%;
+  /* display: block; */
+  /* margin-left: 40.1%; */
   border-style: none;
   padding: 5px;
   font-size: 30px;
@@ -60,3 +60,6 @@
 .linkk {
   color: white;
 }
+/* .pleseWork{
+  align-items: center;
+} */

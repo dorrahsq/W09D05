@@ -48,10 +48,12 @@ const Profile = () => {
         {user && user[0] ? (
           <>
             <div className="contenerImg">
-              <div className="borderImg">
-                <img className="othersImg" src={user[0].img} alt="img" />
+              <div className="workPls">
+                <div className="borderImg">
+                  <img className="othersImg" src={user[0].img} alt="img" />
+                </div>
+                <div> </div>
               </div>
-
               <h3 className="name"> {user[0].username} </h3>
             </div>
           </>

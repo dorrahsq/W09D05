@@ -21,14 +21,12 @@ const Signup = () => {
       { email, username, password, role: "61a4e07ba6502019b9898c1c" }
     );
     if (users.status === 204) {
-
       setMessage(
         "this email or username already hava an account! log in or change your data"
       );
     } else if (users.status === 210) {
       setMessage("you need to insert a complix password");
     } else {
-
       setMessage(users.data);
       // const data = {
       //   role: users.data.result.role,
@@ -52,8 +50,6 @@ const Signup = () => {
     };
     dispatchEvent(logIn(data));
     navigate(`/home`);
-
-
   };
   const responseFGoogle = (res) => {
     console.log(res);
@@ -62,28 +58,33 @@ const Signup = () => {
     <>
       <div className="describeItem">
         <span className="Logg">sign up </span>
-        <input
-          type="text"
-          placeholder=" email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <input
-          type="text"
-          placeholder="username"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        />
-
-        <input
-          type="password"
-          placeholder=" password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
+        <div>
+          <input
+            type="text"
+            placeholder=" email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="username"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder=" password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </div>
         <button
           className="LogBtn"
           onClick={() => {

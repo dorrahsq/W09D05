@@ -22,9 +22,6 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  right: -41px;
   transition: 0.5s ease;
 }
 .img3:hover {
@@ -32,7 +29,7 @@
   transform: scale(1.25) perspective(1px);
 }
 .userName {
-  margin-top: 75px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 

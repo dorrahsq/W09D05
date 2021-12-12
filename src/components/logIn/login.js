@@ -49,8 +49,6 @@ const Login = () => {
     };
     dispatchEvent(logIn(data));
     navigate(`/home`);
-
-
   };
   const responseFGoogle = (res) => {
     console.log(res);
@@ -60,13 +58,15 @@ const Login = () => {
     <>
       <div className="describeItem">
         <span className="Logg">Log in </span>
-        <input
-          type="text"
-          placeholder=" email or username"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
+        <div>
+          <input
+            type="text"
+            placeholder=" email or username"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
         <input
           type="password"
           placeholder=" password"

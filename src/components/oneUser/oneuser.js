@@ -15,7 +15,7 @@ const OneUser = () => {
   const [userPostss, setUserPostss] = useState([]);
   useEffect(() => {
     getUser();
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   const getUser = async () => {
@@ -38,7 +38,6 @@ const OneUser = () => {
       }
     );
     setUserPostss(userPosts.data);
-
   };
 
   const goInside = (id) => {
@@ -51,10 +50,12 @@ const OneUser = () => {
         {user && user[0] ? (
           <>
             <div className="contenerImg">
-              <div className="borderImg">
-                <img className="othersImg" src={user[0].img} alt="img"/>
+              <div className="workPls">
+                <div className="borderImg">
+                  <img className="othersImg" src={user[0].img} alt="img" />
+                </div>
+                <div></div>
               </div>
-
               <h3 className="name"> {user[0].username} </h3>
             </div>
           </>
@@ -69,7 +70,11 @@ const OneUser = () => {
             {userPostss.length ? (
               <div className="allImg">
                 {userPostss.map((item) => (
-                  <h4 key={item._id} className="profileDes" onClick={() => goInside(item._id)}>
+                  <h4
+                    key={item._id}
+                    className="profileDes"
+                    onClick={() => goInside(item._id)}
+                  >
                     {item.describe}{" "}
                   </h4>
                 ))}

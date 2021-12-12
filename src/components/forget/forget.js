@@ -22,7 +22,7 @@ const Forget = () => {
     }
   };
   return (
-    <div>
+    <div className="forgett">
       <input
         className="forgetInput"
         type="text"

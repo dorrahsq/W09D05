@@ -22,7 +22,8 @@ const Reset = () => {
   };
 
   return (
-    <div className="resetContener">
+    <div className="forgett">
+      <p className="prr"></p>
       Code
       <input
         className="resetInput"
