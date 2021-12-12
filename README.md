@@ -1,5 +1,5 @@
 # Social media website
-A social media website made In React and Node.js/Express with CRUD Functionality - [Take a look](https://flamboyant-heisenberg-4ee336.netlify.app).
+A social media website made In React and Node.js/Express with CRUD Functionality - [Take a look](https://socialmedia-website.netlify.app).
 
 
 ## Table of Contents
