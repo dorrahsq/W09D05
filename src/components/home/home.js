@@ -11,6 +11,7 @@ import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Stack from "@mui/material/Stack";
 import UseStorage from "../../hocks/useStorage";
+// import videoo from "./../../video/videoo.mp4";
 
 const style = {
   position: "absolute",
@@ -73,6 +74,8 @@ const Home = () => {
   };
   return (
     <div className="home">
+      {/* <video  class="videoInsideDec" autoplay loop muted> <source src={videoo} type="video/mp4"/> </video>
+         <div className="bggg"></div> */}
       {/* <img
         className="backg"
         src="https://images.pexels.com/photos/272745/pexels-photo-272745.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -152,7 +155,7 @@ const Home = () => {
                         imgP={profileImg}
                         describe={describe}
                         postedBy={state.signIn.userID}
-                        handleClose={open}
+                        handleC={handleClose}
                       />
                     </div>
                   )}
