@@ -26,14 +26,13 @@
   top: -10px;
   right: -41px;
   transition: 0.5s ease;
-
 }
-.img3:hover{
-    cursor: pointer;
-    transform: scale(1.25) perspective(1px);
+.img3:hover {
+  cursor: pointer;
+  transform: scale(1.25) perspective(1px);
 }
 .userName {
-  margin-top: 70px;
+  margin-top: 75px;
   margin-bottom: 10px;
 }
 
@@ -41,13 +40,14 @@
   border-style: none;
   background-color: rgba(192, 146, 102, 0.719);
   color: white;
-  padding: 4px;
+  padding: 6px;
   border-radius: 5px;
   transition: 0.5s ease;
-
+  font-weight: 300;
+  font-size: 20px;
 }
 
-.deleteBtn2:hover{
-    cursor: pointer;
-    transform: scale(1.25) perspective(1px);
+.deleteBtn2:hover {
+  cursor: pointer;
+  transform: scale(1.25) perspective(1px);
 }

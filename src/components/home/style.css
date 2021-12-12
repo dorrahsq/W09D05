@@ -10,9 +10,7 @@
 }
 .describe {
   text-align: left;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  margin-top: 30px;
+  margin: 30px 10px 10px;
 }
 .describe:hover {
   cursor: pointer;
@@ -33,9 +31,10 @@
   border-bottom: 0.2px solid rgba(153, 152, 152, 0.219);
   margin: 0 100px;
   border-radius: 10px;
+  word-wrap: break-word;
 }
 #gotothesecondpage {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 50px;
 }
 .imgContener {
@@ -43,6 +42,11 @@
   margin-left: 10px;
   margin-top: 10px;
   display: inline-block;
+}
+
+.fkoe {
+  color: black;
+  margin-left: 175px;
 }
 .imgg {
   width: 35px;
@@ -79,7 +83,7 @@
   background-color: rgba(0, 0, 0, 0.774);
 }
 
-.home button {
+.homeBtn {
   border-style: none;
   background-color: rgba(64, 224, 208, 0);
   border: 1px solid rgb(255, 255, 255);
@@ -91,12 +95,13 @@
   margin-top: 40px;
   margin-bottom: 350px;
 }
-.home button a {
+
+.homeBtn a {
   text-decoration: none;
   color: white;
 }
 
-.home button:hover {
+.homeBtn:hover {
   transform: scale(1.25) perspective(1px);
   cursor: pointer;
   background-color: rgba(128, 128, 128, 0.493);
@@ -117,7 +122,48 @@
 
 .newP {
   transition: 0.5s ease;
+  background-color: rgba(192, 146, 102, 0.719);
+  border-style: none;
+  color: white;
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 23px;
+  margin-bottom: 10px;
 }
 .newP:hover {
   transform: scale(1.25) perspective(1px);
+}
+
+#modal-modal-description {
+  position: relative;
+}
+
+.PostIt {
+  border-style: none;
+  background-color: black;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 7px;
+  font-size: 25px;
+  margin-top: 15px;
+  transition: 0.5s ease;
+  font-family: "Dosis", sans-serif;
+  position: absolute;
+  top: 110px;
+  right: 155px;
+  z-index: 1;
+}
+
+.NewPostModel {
+  padding: 50px;
+}
+
+.PostIt:hover {
+  transform: scale(1.25) perspective(1px);
+  cursor: pointer;
+}
+.photoPlus {
+  text-align: left;
+  margin-left: 10px;
+  color: gray;
 }

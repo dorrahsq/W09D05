@@ -33,27 +33,10 @@
   font-size: 23px;
 }
 
-.PostIt {
-  border-style: none;
-  background-color: black;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 7px;
-  font-size: 23px;
-  margin-top: 15px;
-  transition: 0.5s ease;
-  font-family: "Dosis", sans-serif;
-}
-
-.PostIt:hover {
-  transform: scale(1.25) perspective(1px);
-  cursor: pointer;
-}
-
 .newPostInputt {
   display: block;
-  margin: 0px 0px 0px 50px;
-  width: 300px;
+  margin: 0px 0px 0px 30px;
+  width: 330px;
   border-style: none;
   padding: 5px;
   font-size: 20px;
@@ -61,6 +44,7 @@
   font-family: "Dosis", sans-serif;
   border-bottom: 0.5px solid rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 25px;
 }
 
 .box {

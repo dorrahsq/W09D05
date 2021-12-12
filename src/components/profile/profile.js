@@ -13,7 +13,7 @@ const Profile = () => {
   const [userPostss, setUserPostss] = useState([]);
   useEffect(() => {
     getUser();
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   const getUser = async () => {
@@ -36,7 +36,6 @@ const Profile = () => {
       }
     );
     setUserPostss(userPosts.data);
-
   };
 
   const goInside = (id) => {
@@ -67,9 +66,18 @@ const Profile = () => {
             {userPostss.length ? (
               <div className="allImg">
                 {userPostss.map((item) => (
-                  <h4  key={item._id} className="profileDes" onClick={() => goInside(item._id)}>
-                    {item.describe}{" "}
-                  </h4>
+                  <>
+                    <h4
+                      key={item._id}
+                      className="profileDes"
+                      onClick={() => goInside(item._id)}
+                    >
+                      {item.describe}
+                      {item.img && (
+                        <p className="photoPlusProfile"> + Photo </p>
+                      )}
+                    </h4>
+                  </>
                 ))}
               </div>
             ) : (

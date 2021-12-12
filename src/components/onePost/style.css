@@ -1,3 +1,14 @@
+.contener {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: 240px 300px;
+  padding: 10px 5px 30px;
+  background-color: rgba(0, 0, 0, 0.562);
+  word-wrap: break-word;
+  overflow: hidden;
+
+  /* text-align: left; */
+}
 .inputBio {
   margin: 25px 0 2% 2%;
   border-style: none;
@@ -45,13 +56,7 @@
   align-items: left;
   position: relative;
 }
-.contener {
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 20px;
-  margin: 240px 300px;
-  padding: 10px 5px 30px;
-  background-color: rgba(0, 0, 0, 0.562);
-}
+
 .postContent {
   margin-top: 10px;
   margin-left: 15px;
@@ -75,14 +80,15 @@
   font-size: 20px;
   cursor: pointer;
   transition: 0.5s ease;
+  margin-left: 15px;
 }
 
 .editBioIcno:hover {
   transform: scale(1.25) perspective(1px);
 }
 #postDe {
-  margin: 25px 5px 5px 15px;
-  display: inline-block;
+  margin: 35px 5px 5px 15px;
+  /* display: inline-block; */
 }
 #postDe2 {
   margin: 30px 5px 5px 15px;
@@ -211,4 +217,11 @@
 
 .deleteComment:hover {
   transform: scale(1.25) perspective(1px);
+}
+
+.imggg {
+  /* height: 290px; */
+  width: 795px;
+  /* margin-left: 15px; */
+  margin-top: 15px;
 }

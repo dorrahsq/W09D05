@@ -92,7 +92,7 @@ const Post = () => {
         },
       }
     );
-    navigate(`/home`);
+    navigate(-1);
   };
 
   const deleteComment = async (commentId) => {
@@ -198,6 +198,7 @@ const Post = () => {
               )}
             </>
           )}
+          {post[0].img && <img className="imggg" src={post[0].img} alt="img" />}
 
           <h5 className="des">
             <span className="comment"> comments </span>
@@ -215,7 +216,7 @@ const Post = () => {
             />
             {/* <button className="commentBtn" onClick={commentThis}> reply </button> */}
             {post.length &&
-              post[2].map((ele , i) => {
+              post[2].map((ele, i) => {
                 return (
                   <div key={i}>
                     <div className="postContent">

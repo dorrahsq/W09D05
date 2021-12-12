@@ -19,13 +19,23 @@
   border: 1px solid rgb(255, 255, 255);
   border-radius: 20px;
   padding: 20px;
-  margin: 20px 250px;
+  margin: 20px 300px;
+  transition: 0.4s ease;
+  font-size: 25px;
+  word-wrap: break-word;
 }
 .profileDes:hover {
   cursor: pointer;
+  transform: scale(1.1) perspective(1px);
 }
 .name {
   margin-bottom: 50px;
   margin-top: 10px;
   font-size: 30px;
+}
+.photoPlusProfile {
+  margin-top: 10px;
+  color: gray;
+  font-weight: 100;
+  font-size: 20px;
 }
