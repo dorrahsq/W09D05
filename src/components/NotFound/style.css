@@ -1,0 +1,24 @@
+.notFound {
+  margin-top: 200px;
+  font-size: 100px;
+  margin-bottom: 40px;
+}
+
+.notFoundLink {
+  color: white;
+}
+
+.notfoundBtn {
+  border-style: none;
+  background-color: rgba(192, 146, 102, 0.719);
+  color: white;
+  padding: 10px;
+  transition: 0.5s ease;
+  border-radius: 15px;
+  font-size: 23px;
+  font-size: 40px;
+}
+
+.notfoundBtn:hover {
+  transform: scale(1.25) perspective(1px);
+}
