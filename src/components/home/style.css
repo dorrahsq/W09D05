@@ -114,3 +114,10 @@
 .marginB {
   margin-bottom: 180px;
 }
+
+.newP {
+  transition: 0.5s ease;
+}
+.newP:hover {
+  transform: scale(1.25) perspective(1px);
+}

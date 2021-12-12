@@ -86,7 +86,7 @@ const Home = () => {
       <li className="lie">
               <span className="link">
                 <span className="newPostBtn">
-                  <span
+                  <span className="newP"
                     onClick={() => {
                       handleOpen();
                     }}

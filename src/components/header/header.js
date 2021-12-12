@@ -1,31 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { AiOutlineLogout } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { logOut } from "../../reducers/login";
 import { useDispatch } from "react-redux";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import axios from "axios";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  p: 4,
-};
+
 
 const Header = () => {
-  const [describe, setDescribe] = useState("initialState");
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
   let navigate = useNavigate();
   const dispatchEvent = useDispatch();
 
@@ -42,18 +26,7 @@ const Header = () => {
     dispatchEvent(logOut(data));
     navigate(`/`);
   };
-  const postIt = async () => {
-    await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/posts/create`,
-      { describe: describe, postedBy: state.signIn.userID },
-      {
-        headers: {
-          Authorization: `Bearer ${state.signIn.token}`,
-        },
-      }
-    );
-    window.location.reload(false);
-  };
+ 
   return (
     <>
       <div className="nav">
