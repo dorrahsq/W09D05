@@ -5,9 +5,10 @@ A social media website made In React and Node.js/Express with CRUD Functionality
 ## Table of Contents
 1. [ User Stories. ](#userStor)
 2. [ Admin Stories. ](#adminSto)
-3. [ UML diagrm.](#frontUml)
-4. [ Routes. ](#frontRoutes)
-4. [ Installation. ](#install)
+3. [ Wireframes. ](#wireframe)
+4. [ UML diagrm.](#frontUml)
+5. [ Routes. ](#frontRoutes)
+6. [ Installation. ](#install)
 
 
 <a name="userStor"></a>
