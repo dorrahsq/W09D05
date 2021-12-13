@@ -30,11 +30,8 @@ const UseStorage = (props) => {
         },
       }
     );
+    props.rerender()
     props.handleC()
-    // props.handleClose = false /////
-    //refresh pagge
-    //     window.location.reload(false);
-    // props.handleClose();
   };
 
   return (

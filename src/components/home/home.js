@@ -155,6 +155,7 @@ const Home = () => {
                         describe={describe}
                         postedBy={state.signIn.userID}
                         handleC={handleClose}
+                        rerender={getAllPosts}
                       />
                     </div>
                   )}
