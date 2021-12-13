@@ -220,10 +220,10 @@ const Post = () => {
                 return (
                   <div key={i}>
                     <div className="postContent">
-                      <img className="imgg2" src={ele.img} alt="img" />
-                      <p className="commentBy"> {ele.by} </p>
+                      <img onClick={()=>person(ele._id)} className="imgg2" src={ele.img} alt="img" />
+                      <p onClick={()=>person(ele._id)} className="commentBy"> {ele.by} </p>
                       <br />
-                      <h6 className="commentTitle"> {ele.title} </h6>
+                      <h6  className="commentTitle"> {ele.title} </h6>
 
                       {/* comment owner, post owner and admin */}
                       {(state.signIn.userID === ele._id ||

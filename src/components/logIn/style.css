@@ -51,8 +51,13 @@
 .forgetPass {
   margin-top: 20px;
   font-size: 25px;
+
 }
 
+.forgetPass:hover {
+cursor: pointer;
+  
+}
 .already {
   font-size: 30px;
 }

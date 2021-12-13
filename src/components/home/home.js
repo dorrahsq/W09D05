@@ -73,13 +73,18 @@ const Home = () => {
     handleClose();
   };
   return (
-
-
-
     <div className="home">
-      <video  class="videoInsideDec"  autoPlay={true} loop={true} muted={true}> <source src={videoo} type="video/mp4"/> </video>
-         <div className="bggg"></div>
-      
+      <video
+        className="videoInsideDec"
+        autoPlay={true}
+        loop={true}
+        muted={true}
+      >
+        {" "}
+        <source src={videoo} type="video/mp4" />{" "}
+      </video>
+      <div className="bggg"></div>
+
       <h1 className="firstHead">Welcome to the best social media platform</h1>
       <h5 className="secHead">
         See what’s happening and what people are talking about right now!{" "}
