@@ -11,8 +11,8 @@ import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Stack from "@mui/material/Stack";
 import UseStorage from "../../hocks/useStorage";
-// import videoo from "./../../video/videoo.mp4";
-
+import videoo from "./../../video/video-2.mp4";
+// import videooo from "./../../video/intellisense.mp4";
 const style = {
   position: "absolute",
   top: "50%",
@@ -73,14 +73,13 @@ const Home = () => {
     handleClose();
   };
   return (
+
+
+
     <div className="home">
-      {/* <video  class="videoInsideDec" autoplay loop muted> <source src={videoo} type="video/mp4"/> </video>
-         <div className="bggg"></div> */}
-      {/* <img
-        className="backg"
-        src="https://images.pexels.com/photos/272745/pexels-photo-272745.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      />
-      <div className="bgg"></div> */}
+      <video  class="videoInsideDec"  autoPlay={true} loop={true} muted={true}> <source src={videoo} type="video/mp4"/> </video>
+         <div className="bggg"></div>
+      
       <h1 className="firstHead">Welcome to the best social media platform</h1>
       <h5 className="secHead">
         See what’s happening and what people are talking about right now!{" "}
