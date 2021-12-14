@@ -6,11 +6,11 @@
   background-color: rgba(0, 0, 0, 0.562);
   word-wrap: break-word;
   overflow: hidden;
-
+position: relative;
   /* text-align: left; */
 }
 .inputBio {
-  margin: 25px 0 2% 2%;
+  margin: 25px 0 3% 2%;
   border-style: none;
   padding: 2px;
   width: 300px;
@@ -72,7 +72,7 @@
   text-align: left;
   align-items: left;
   margin-top: 10px;
-  font-size: 29px;
+  font-size: 25px;
 }
 
 .editBioIcno {
@@ -80,14 +80,16 @@
   font-size: 20px;
   cursor: pointer;
   transition: 0.5s ease;
-  margin-left: 15px;
+  margin-left: 15px;;
+  margin-top: 5px;
+  /* margin-bottom: 5px; */
 }
 
 .editBioIcno:hover {
   transform: scale(1.25) perspective(1px);
 }
 #postDe {
-  margin: 35px 5px 5px 15px;
+  margin: 35px 5px 0px 15px;
   /* display: inline-block; */
 }
 #postDe2 {
@@ -149,7 +151,7 @@
 }
 .imgg2:hover {
   cursor: pointer;
-  }
+}
 .commentBy {
   display: inline-block;
   position: absolute;
@@ -160,7 +162,7 @@
 }
 .commentBy:hover {
   cursor: pointer;
-  }
+}
 
 .commentTitle {
   display: inline-block;
@@ -226,7 +228,32 @@
 
 .imggg {
   /* height: 290px; */
-  width: 795px;
-  /* margin-left: 15px; */
-  margin-top: 15px;
+  width: 800px;
+  margin-top: 6px;
+
+}
+
+.newPp {
+  color: white;
+  position: absolute;
+  top: 93px;
+  left: 45px;
+  font-size: 25px;
+  transition: 0.5s ease;
+  margin  : 0 ;
+  padding: 0 ;
+  
+}
+
+.newPp:hover {
+  transform: scale(1.25) perspective(1px);
+}
+
+.camICon{
+    color: black; 
+   margin-left: 75px;
+}
+.lie2{
+    display: inline-block;
+  list-style: none;  
 }

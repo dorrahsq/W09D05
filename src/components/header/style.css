@@ -10,6 +10,7 @@
 .lie {
   display: inline-block;
   margin: 1% 5%;
+  
 }
 .lie:hover {
   cursor: pointer;

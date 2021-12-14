@@ -5,16 +5,48 @@ import "./style.css";
 import { useSelector } from "react-redux";
 import { IoHeartSharp, IoHeartOutline } from "react-icons/io5";
 import { RiPencilFill, RiDeleteBin6Fill } from "react-icons/ri";
+import UseStorageProfile from "../../hocks/useStorageProfile";
+import IconButton from "@mui/material/IconButton";
+import { styled } from "@mui/material/styles";
+import {MdPhotoCamera } from "react-icons/md";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import Stack from "@mui/material/Stack";
 
+const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 200,
+    bgcolor: "background.paper",
+    boxShadow: 24,
+  
+    p: 4,
+  };
+  
+
+  
+  const Input = styled("input")({
+    display: "none",
+  });
+  
 const Post = () => {
   let navigate = useNavigate();
   const id = useParams().id;
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [post, setPost] = useState([]);
   const [newDes, setNewDes] = useState("");
   const [postInput, setPostInput] = useState(false);
   const [comment, setComment] = useState([]);
   const [newComment, setNewComment] = useState([]);
   const [isLiked, setIsLiked] = useState(`${(<IoHeartSharp />)}`);
+  const [profileImg, setProfileImg] = useState("");
+
 
   const state = useSelector((state) => {
     return state;
@@ -34,6 +66,7 @@ const Post = () => {
         },
       }
     );
+    console.log(post.data);
     setPost(post.data);
 
     const result = await axios.get(
@@ -196,6 +229,84 @@ const Post = () => {
                   </button>
                 </div>
               )}
+
+
+
+
+
+
+
+<li className="lie2">
+        <span className="link">
+          <span className="newPostBtn">
+            <MdPhotoCamera
+              className="newPp"
+              onClick={() => {
+                handleOpen();
+              }}
+            />    
+          </span>
+          <Modal
+            className="modal"
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <span className="NewPostModell">
+              <Box sx={style} className="box">
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <Stack direction="row" alignItems="center" spacing={2}>
+                    <label htmlFor="icon-button-filee">
+                      <Input
+                        accept="image/*"
+                        id="icon-button-filee"
+                        type="file"
+                        onChange={(e) => {
+                          /////////
+                          setProfileImg(e.target.files[0]);
+                        }}
+                      />
+
+                      <IconButton
+                        color="primary"
+                        aria-label="upload picture"
+                        component="span"
+                      >
+                        <PhotoCamera className="camICon" />
+                      </IconButton>
+                    </label>
+                  </Stack>
+
+                
+
+                  {profileImg && (
+                    <div>
+                      <UseStorageProfile
+                        imgP={profileImg}
+                        handleC={handleClose}
+                        reRender={getPosts}
+                        id = {id}
+                      />
+                    </div>
+                  )}
+
+                </Typography>
+              </Box>
+            </span>
+          </Modal>
+        </span>
+      </li>
+
+
+
+
+
+
+
+
             </>
           )}
           {post[0].img && <img className="imggg" src={post[0].img} alt="img" />}
